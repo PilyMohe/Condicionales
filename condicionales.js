@@ -121,6 +121,41 @@ if (numero1 < numero2) {
   console.log("El número menor es:", numero2);
 }
 
+// Ejercicio 6 Número mayor que
+
+let numeros1 = Number(prompt("Ingrese el primer número:"));
+let numeros2 = Number(prompt("Ingrese el segundo número:"));
+let numeros3 = Number(prompt("Ingrese el tercer número:"));   
+
+let mayor = numeros1; 
+
+if (numeros2 > mayor) {
+  mayor = numeros2;
+}
+
+if (numeros3 > mayor) {
+  mayor = numeros3;
+}
+
+console.log("El número mayor es:", mayor);
+
+//Ejercicio 7 días de la semana 
+
+let diadelasemana = prompt("Escribe un un dia de la semana").toLowerCase();
+
+if (diadelasemana === "lunes"){
+    console.log("Ten un gran inicio de semana")
+} else if(diadelasemana === "martes"){
+    console.log("Ya casi Miercoles")
+} else if(diadelasemana === "miercoles"){
+    console.log("Ombligo de semana")
+} else if( diadelasemana === "jueves"){
+    console.log("Juebebes")
+} else if( diadelasemana === "viernes"){
+    console.log("¡YEI! Ya es Viernes!!")
+}else{
+    console.log("Bonito fin de semana, pasala increible")
+}
 
 //Ejercicio 8 Calificaciones
 
@@ -138,6 +173,73 @@ if(calificacion <=6){
 }else{
     console.log("Hay un error")
 }
+
+// Ejercicio 9 Comprar un helado 
+
+function calcularPrecioHelado() {
+    let precioHelado = 50; 
+    let topping = prompt("¿Qué topping deseas para tu helado? (oreo, kitkat, brownie o ninguno):").toLowerCase();
+  
+    switch (topping) {
+      case "oreo":
+        return precioHelado + 10;
+      case "kitkat":
+        return precioHelado + 15;
+      case "brownie":
+        return precioHelado + 20;
+      case "ninguno":
+        return precioHelado;
+      default:
+        console.log("No tenemos este topping, lo sentimos.");
+        return precioHelado;
+    }
+  }
+  const precioFinal = calcularPrecioHelado();
+  console.log("El precio total de tu helado es:", precioFinal, "MXN");
+
+//Ejercicio 10
+function calcularCosto() {
+    let precioBase = {
+      course: 4999,
+      carrera: 3999,
+      master: 2999
+    };
+    let descuentoBeca = {
+      facebook: 0.2, // 20%
+      google: 0.15, // 15%
+      jesua: 0.5 // 50%
+    };
+    let duracion = {
+      course: 2,
+      carrera: 6,
+      master: 12
+    };
+  
+    let nivel = prompt("¿Qué nivel deseas? (course, carrera, master):").toLowerCase();
+    let beca = prompt("¿Tienes alguna beca? (facebook, google, jesua o ninguna):").toLowerCase();
+  
+   
+    if (!Object.keys(precioBase).includes(nivel)) {
+      console.log("Nivel no válido.");
+      return;
+    }
+  
+    let precioMensual = precioBase[nivel];
+    let descuento = 0;
+  
+    if (beca in descuentoBeca) {
+      descuento = descuentoBeca[beca];
+      precioMensual *= (1 - descuento);
+    }
+  
+    let duracionMeses = duracion[nivel];
+    let precioTotal = precioMensual * duracionMeses;
+  
+    console.log(`El costo mensual con descuento es de: $${precioMensual.toFixed(2)} MXN`);
+    console.log(`El costo total del programa es de: $${precioTotal.toFixed(2)} MXN`);
+  }
+  
+  calcularCosto();
 
 //Ejercicio 11 
 console.log("----------------------------------")
