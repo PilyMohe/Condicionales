@@ -71,7 +71,12 @@ if(belleza === "SI"){
 
 // Ejercicio 2
 
-
+let numero = prompt("escribe un número") 
+if (numero % 2 === 0){
+    console.log("Es divsible por 2")
+}else{
+    console.log("No es divisible por 2")
+}
 //Ejercicio 8 Calificaciones
 
 let calificacion = prompt("¿Cuál es tu calificación?")
