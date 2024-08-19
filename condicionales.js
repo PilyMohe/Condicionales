@@ -60,7 +60,8 @@ if(torta == "queso"){
 }
 console.log("El precio total es $" + precio);
 */
-//Ejercicio 1
+
+//Ejercicio 1 Belleza
 
 let belleza = prompt("¿Eres bellisimo/a?").toUpperCase();
 if(belleza === "SI"){
@@ -69,7 +70,7 @@ if(belleza === "SI"){
     console.log("No te creo")
 }
 
-// Ejercicio 2
+// Ejercicio 2 Divisible entre 2
 
 let numero = prompt("escribe un número") 
 if (numero % 2 === 0){
@@ -77,6 +78,50 @@ if (numero % 2 === 0){
 }else{
     console.log("No es divisible por 2")
 }
+
+// Ejercicio 3 Número Par o Impar
+
+let numeros = prompt("Introduce un número entero");
+
+let resultado = parImpar (numeros);
+alert("El número" +numeros+ "es" + resultado);
+
+function parImpar(numeros){
+    if(numeros % 2 == 0){
+        return "par";
+    }else{
+        return "impar";
+    }
+}
+
+// Ejercicio 4 Premio
+
+let numeroCliente = prompt("Ingrese un número para el sorteo");
+
+
+numeroCliente = Number(numeroCliente);
+
+if (numeroCliente === 1000) {
+  console.log("¡Ganaste un premio!");
+} else {
+  console.log("Lo sentimos, sigue participando. Tu número es:", numeroCliente);
+}
+
+// Ejercicio 5 Número menor que 
+
+let numero1 = prompt("Ingrese el primer número:");
+let numero2 = prompt("Ingrese el segundo número:");
+
+numero1 = Number(numero1);
+numero2 = Number(numero2);
+
+if (numero1 < numero2) {
+  console.log("El número menor es:", numero1);
+} else {
+  console.log("El número menor es:", numero2);
+}
+
+
 //Ejercicio 8 Calificaciones
 
 let calificacion = prompt("¿Cuál es tu calificación?")
@@ -116,12 +161,13 @@ if(vehiculo == "coche"){
         precio = precio * kilometro + 10;
     }
 }else if(vehiculo  == "autobus"){
+    precio = 0.5;
     let kilometro = prompt("¿Cuantos kilometros recorriste?")
     if("litrosconsumidos >= 0 && litrosconsumidos <=100"){
         precio = precio * kilometro + 5;
     if("litrosconsumidos > 100")
         precio = precio * kilometro + 10;
-}
+    }
 }else{
     console.log("No contamos con este auto")
 }
